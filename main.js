@@ -6,23 +6,23 @@ const FULL_HEART = "♥";
 const likeButtons = document.querySelectorAll(".like-glyph");
 const errorNotification = document.querySelector("#modal");
 
-for (const btn of likeButtons) btn.addEventListener("click", like);
+for (const button of likeButtons) button.addEventListener("click", like);
 
 function like(event) {
-  const btn = event.target;
-  if (btn.innerText == EMPTY_HEART) {
+  const button = event.target;
+  if (button.innerText == EMPTY_HEART) {
     mimicServerCall()
       .then(response => {
-        btn.innerText = FULL_HEART;
-        btn.classList.add("activated-heart");
+        button.innerText = FULL_HEART;
+        button.classList.add("activated-heart");
       })
       .catch(error => {
         errorNotification.classList.remove("hidden");
         setTimeout(() => errorNotification.classList.add("hidden"), 3000);
       });
   } else {
-    btn.innerText = EMPTY_HEART;
-    btn.classList.add("activated-heart");
+    button.innerText = EMPTY_HEART;
+    button.classList.add("activated-heart");
   }
 }
 
