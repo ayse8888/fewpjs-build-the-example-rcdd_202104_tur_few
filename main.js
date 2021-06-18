@@ -3,10 +3,10 @@ const EMPTY_HEART = "♡";
 const FULL_HEART = "♥";
 
 // Your JavaScript code goes here!
-const likeBtns = document.querySelectorAll(".like-glyph");
+const likeButtons = document.querySelectorAll(".like-glyph");
 const errorNotification = document.querySelector("#modal");
 
-for (const btn of likeBtns) btn.addEventListener("click", like);
+for (const btn of likeButtons) btn.addEventListener("click", like);
 
 function like(event) {
   const btn = event.target;
